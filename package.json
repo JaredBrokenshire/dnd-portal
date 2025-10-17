@@ -1,0 +1,40 @@
+{
+  "name": "dnd-portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --host localdnd.com",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@casl/ability": "4.1.6",
+    "@casl/vue": "1.1.1",
+    "axios": "^1.8.4",
+    "core-js": "^3.8.3",
+    "feather-icons": "^4.29.2",
+    "npm": "8.11.0",
+    "vee-validate": "3.4.5",
+    "vue": "2.6.14",
+    "vue-feather-icons": "^5.1.0",
+    "vue-router": "3.4.9",
+    "vue-toastification": "^1.7.14",
+    "vuex": "3.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "tailwindcss": "^4.1.4",
+    "vue-template-compiler": "2.6.14"
+  }
+}

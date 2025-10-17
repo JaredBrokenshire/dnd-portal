@@ -1,0 +1,53 @@
+<template>
+  <div class="h-full max-h-full min-h-0">
+    <section class="flex flex-col max-h-full w-full h-[600px] overflow-y-auto">
+      <h2 class="sr-only">Features & Traits</h2>
+
+      <!-- Class Features -->
+      <div>
+        <div class="content-section__header">
+          <div class="content-section__header-text">Class Features</div>
+        </div>
+
+        <feature-display
+          v-for="(feature, index) in $props.character.class.features"
+          :key="`class-feature-${index}`"
+          :feature="feature"
+        />
+      </div>
+
+      <!-- Racial Traits -->
+      <div>
+        <div class="content-section__header">
+          <div class="content-section__header-text">Racial Traits</div>
+        </div>
+
+        <feature-display
+          v-for="(trait, index) in $props.character.race.traits"
+          :key="`race-trait-${index}`"
+          :feature="trait"
+        />
+      </div>
+    </section>
+  </div>
+</template>
+
+<script>
+  import FeatureDisplay
+    from "@/views/characters/sections/sheet/subsections/primary/features-and-traits/FeatureDisplay.vue";
+
+  export default {
+    name: "FeaturesAndTraits",
+    components: {FeatureDisplay},
+    props: {
+      character: {
+        type: Object,
+        required: true
+      }
+    },
+  }
+</script>
+
+<style scoped>
+
+</style>
