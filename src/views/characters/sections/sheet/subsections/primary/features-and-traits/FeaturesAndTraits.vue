@@ -10,9 +10,9 @@
         </div>
 
         <feature-display
-          v-for="(feature, index) in $props.character.class.features"
+          v-for="(classFeature, index) in sortedClassFeatures"
           :key="`class-feature-${index}`"
-          :feature="feature"
+          :feature="classFeature.feature"
         />
       </div>
 
@@ -23,9 +23,9 @@
         </div>
 
         <feature-display
-          v-for="(trait, index) in $props.character.race.traits"
+          v-for="(raceTrait, index) in sortedRaceTraits"
           :key="`race-trait-${index}`"
-          :feature="trait"
+          :feature="raceTrait.feature"
         />
       </div>
     </section>
@@ -43,6 +43,20 @@
       character: {
         type: Object,
         required: true
+      }
+    },
+    computed: {
+      sortedClassFeatures() {
+        let res = this.$props.character.class.features;
+        return res.sort((a, b) => {
+          return a.priority >= b.priority;
+        })
+      },
+      sortedRaceTraits() {
+        let res = this.$props.character.race.traits
+        return res.sort((a, b) => {
+          return a.priority >= b.priority;
+        })
       }
     },
   }
